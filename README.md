@@ -1,14 +1,21 @@
 # QQMusic
 
-这是一个音乐播放器的Demo，支持歌词解析并滚动展示，另外支持后台播放以及后台播放图片歌词的绘制，最重要的是它是用Swift4.1写的哦
-####运行环境环境：Xcode9 + Swift 4.1
+   这是一个音乐播放器的Demo，支持歌词解析并滚动展示，另外支持后台播放以及后台播放图片歌词的绘制， 最重要的是它是用Swift4.1写的哦!
+
+##  运行环境环境：Xcode9 + Swift 4.1
 
 
-####播放页面
-![](4.gif)
-####后台播放页面
-![](3.gif)
-#####一：动画的暂停与恢复
+## 播放页面   
+![](4.gif)     
+
+
+## 后台播放页面      
+
+
+![](3.gif)     
+
+  
+### 一：动画的暂停与恢复
 ```objc
    /**暂停动画*/
     func pauseAnimate(){
@@ -27,7 +34,7 @@
         beginTime = timeSincePause
     }
 ```
-#####二：对Label文字的绘制
+### 二：对Label文字的绘制
 ```objc
     override func drawRect(rect: CGRect) {
         super.drawRect(rect)
@@ -39,7 +46,7 @@
         UIRectFillUsingBlendMode(fillRect, .SourceIn)
     }
 ```
-#####三：对后台歌曲图片的歌词水印的绘制
+### 三：对后台歌曲图片的歌词水印的绘制
 ```objc
   /**
     根据文字的高度和传来的文字来生成水印文字
@@ -82,7 +89,7 @@
        return textImage
     }
 ```
-#####四：激活后台播放
+### 四：激活后台播放
 ```objc
    /// 设置后台播放
     class func setupBackPlay() {
@@ -94,7 +101,7 @@
         try! session.setActive(true)
     }
 ```
-#####五：设置后台播放事件内容
+### 五：设置后台播放事件内容
 ```objc
 class func setupLockScreenInfoWithLockImage(lockImage:UIImage,duration:NSTimeInterval, currTime: NSTimeInterval) {
         //获取当前播放的歌曲
@@ -118,7 +125,7 @@ class func setupLockScreenInfoWithLockImage(lockImage:UIImage,duration:NSTimeInt
     }
 
 ```
-#####六：监听远程事件
+### 六：监听远程事件
 ```objc
 //监听远程事件
     override func remoteControlReceivedWithEvent(event: UIEvent?) {
